@@ -5,15 +5,574 @@
     <meta name="description" content="Portfolio Rama Raditia - Web Developer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portorama</title>
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS -->
-    <link href="./src/css/aos.css" rel="stylesheet" />
     <link href="./src/css/tailwind.css" rel="stylesheet" />
-    <link href="./src/css/style.css" rel="stylesheet" />
     <title>Portorama</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Patrick Hand", cursive;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #skills p {
+        font-family: "Patrick Hand", cursive;
+      }
+
+      @keyframes spin-slow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Animasi untuk progress bars */
+      .fill-bar {
+        width: 0;
+      }
+
+      .aos-animate .fill-bar {
+        width: var(--width);
+      }
+
+      .btn-animated,
+      .tab-button {
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #1d1d1d;
+        border-radius: 9999px;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        transform: scale(1);
+        z-index: 1;
+        will-change: transform;
+      }
+
+      .btn-animated::before,
+      .tab-button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(29, 29, 29, 0.1);
+        border-radius: 100%;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        z-index: -1;
+        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+          opacity 0.6s ease, width 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+          height 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .btn-animated:hover,
+      .tab-button:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-animated:hover::before,
+      .tab-button:hover::before {
+        width: 300%;
+        height: 300%;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        background: #1d1d1d;
+      }
+
+      .btn-animated span,
+      .tab-button span {
+        position: relative;
+        z-index: 1;
+        transition: color 0.4s ease 0.1s;
+      }
+
+      .btn-animated:hover span,
+      .tab-button:hover span {
+        color: white;
+      }
+
+      .tab-button.active {
+        background-color: #1d1d1d;
+        color: white;
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Nav Button */
+      .nav-button {
+        border: 2px solid #1d1d1d;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        display: flex;
+        gap: 0.5rem;
+        will-change: transform;
+      }
+
+      .nav-button:hover {
+        gap: 1.5rem;
+        padding: 0.75rem 2.5rem;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-button img {
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .nav-button img:hover {
+        transform: scale(1.3) translateY(-2px) rotate(5deg);
+      }
+
+      @supports not (
+        (-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))
+      ) {
+        .backdrop-blur-md {
+          background-color: rgba(224, 224, 224, 0.3);
+        }
+      }
+
+      .fill-bar {
+        height: 100%;
+        border-radius: 9999px;
+        background-color: #1d1d1d;
+        transition: width 1s ease-in-out;
+      }
+
+      .tool-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease,
+          background-color 0.4s ease;
+        border: 2px solid #989898;
+        border-radius: 12px;
+        padding: 20px;
+        background-color: #0f0f0f;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      }
+
+      .tool-card:hover {
+        transform: translateY(-10px);
+        background-color: #ffffff;
+        box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .tool-card:hover .tool-icon {
+        animation: fadeUp 0.6s ease forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .tool-icon {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .tool-card:hover .tool-icon:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .tool-card:hover .tool-icon:nth-child(2) {
+        animation-delay: 0.25s;
+      }
+      .tool-card:hover .tool-icon:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .tool-card:hover .tool-icon:nth-child(4) {
+        animation-delay: 0.55s;
+      }
+
+      .portfolio-card {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+
+      .portfolio-card div {
+        transform: rotateX(0) rotateY(0);
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          box-shadow 0.4s ease, background-color 0.4s ease;
+      }
+
+      .portfolio-card:hover div {
+        transform: rotateX(5deg) rotateY(-5deg);
+        box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .portfolio-card::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 10px;
+        right: -10px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        transform: rotateX(80deg) translateZ(-20px);
+        filter: blur(10px);
+        opacity: 0;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        z-index: -1;
+      }
+
+      .portfolio-card:hover::after {
+        opacity: 1;
+        transform: rotateX(80deg) translateZ(-30px);
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-10px) scale(1.02);
+      }
+
+      @keyframes cardAppear {
+        0% {
+          opacity: 0;
+          transform: translateY(30px) rotateX(10deg);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) rotateX(0);
+        }
+      }
+
+      .portfolio-card {
+        animation: cardAppear 0.8s ease forwards;
+        opacity: 0;
+      }
+
+      .portfolio-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .portfolio-card:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      .portfolio-card:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+
+      .portfolio-card {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 0.6s ease forwards;
+      }
+
+      .portfolio-card:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .portfolio-card:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .portfolio-card:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      /* Experience Section */
+      .experience-item {
+        transition: all 0.4s ease;
+      }
+
+      .experience-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .experience-item:hover .experience-dot {
+        transform: translateX(-50%) scale(1.2);
+        box-shadow: 0 0 0 4px rgba(29, 29, 29, 0.2);
+      }
+
+      .shadow-custom {
+        box-shadow: 6px 6px 0 #1d1d1d;
+      }
+
+      .shadow-custom-left {
+        box-shadow: -6px 6px 0 #1d1d1d;
+      }
+
+      /* Image Modal */
+      .image-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .image-modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .image-modal-content {
+        max-width: 90%;
+        max-height: 90%;
+        transition: transform 0.3s ease;
+        transform: scale(0.8);
+      }
+
+      .image-modal.active .image-modal-content {
+        transform: scale(1);
+      }
+
+      .image-modal img {
+        max-width: 100%;
+        max-height: 90vh;
+        border: 4px solid #1d1d1d;
+        border-radius: 4px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .close-modal:hover {
+        transform: rotate(90deg);
+      }
+
+      .experience-image {
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .experience-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 24px;
+        height: 24px;
+        border: 2px solid #1d1d1d;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .contact-checkbox:checked {
+        background-color: #1d1d1d;
+      }
+
+      .contact-checkbox:checked::after {
+        content: "✓";
+        color: white;
+        font-size: 14px;
+      }
+
+      /* Dark Mode */
+      .dark {
+        --tw-bg-opacity: 1;
+        background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+      }
+
+      .dark body {
+        color: #e2e8f0;
+      }
+
+      .dark h1,
+      .dark h2,
+      .dark h3,
+      .dark h4,
+      .dark h5,
+      .dark h6 {
+        color: #f8fafc;
+      }
+
+      .dark .text-\[\#1D1D1D\] {
+        color: #f8fafc;
+      }
+
+      .dark .text-\[\#6C6B6B\] {
+        color: #94a3b8;
+      }
+
+      .dark .bg-white {
+        background-color: #1e293b;
+      }
+
+      /* border colors */
+      .dark .border-\[\#1D1D1D\],
+      .dark .border-\[\#989898\],
+      .dark .border-2,
+      .dark .border-4,
+      .dark .border {
+        border-color: #475569;
+      }
+
+      /* shadow colors */
+      .dark .shadow-\[6px_6px_0_\#1D1D1D\],
+      .dark .shadow-\[-6px_6px_0_\#1D1D1D\] {
+        box-shadow: 6px 6px 0 #475569;
+      }
+
+      /* background colors */
+      .dark .bg-\[\#1D1D1D\] {
+        background-color: #475569;
+      }
+
+      /* Dark Mode Buttons */
+      .dark .btn-animated,
+      .dark .tab-button {
+        border-color: #94a3b8;
+      }
+
+      .dark .btn-animated::before,
+      .dark .tab-button::before {
+        background: rgba(223, 204, 255, 0.2);
+      }
+
+      .dark .btn-animated:hover::before,
+      .dark .tab-button:hover::before {
+        background: #94a3b8;
+      }
+
+      .dark .btn-animated:hover,
+      .dark .tab-button:hover {
+        box-shadow: 0 8px 15px rgba(225, 207, 255, 0.2);
+        transform: scale(1.05) translateY(-2px);
+      }
+
+      .dark .tab-button.active {
+        background-color: #94a3b8;
+        box-shadow: 0 4px 8px rgba(225, 207, 255, 0.2);
+      }
+
+      .dark .btn-animated:hover span,
+      .dark .tab-button:hover span {
+        color: #f8fafc;
+      }
+
+      /* Dark Mode Nav Button */
+      .dark .nav-button {
+        border-color: #94a3b8;
+        background-color: rgba(30, 41, 59, 0.7);
+      }
+
+      .dark .nav-button:hover {
+        background-color: rgba(225, 207, 255, 0.2);
+        box-shadow: 0 8px 15px rgba(213, 186, 255, 0.2);
+      }
+
+      /* Dark Mode Progress Bars */
+      .dark .fill-bar {
+        background-color: #7ba3db;
+      }
+
+      /* Dark Mode Tool Cards */
+      .dark .tool-card {
+        background-color: #1e293b;
+        border-color: #475569;
+      }
+
+      .dark .tool-card:hover {
+        background-color: #334155;
+        box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Dark Mode Portfolio Cards */
+      .dark .portfolio-card div {
+        background-color: #1e293b;
+        border-color: #475569;
+      }
+
+      .dark .social-icon img,
+      .dark .nav-button img,
+      .dark .contact-icon img {
+        filter: invert(1) brightness(1.5);
+      }
+
+      .dark .portfolio-card:hover div {
+        box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Dark Mode Experience Section */
+      .dark .experience-dot {
+        border-color: #475569;
+        background-color: #1e293b;
+      }
+
+      .dark .image-modal img {
+        border-color: #475569;
+      }
+
+      /* Dark Mode Form Inputs */
+      .dark input,
+      .dark textarea {
+        background-color: #1e293b;
+        border-color: #475569;
+        color: #e2e8f0;
+      }
+
+      .dark input::placeholder,
+      .dark textarea::placeholder {
+        color: #94a3b8;
+      }
+
+      #theme-toggle img,
+      #theme-toggle-mobile img {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .dark #light-icon,
+      .dark #light-icon-mobile {
+        display: none;
+      }
+
+      .dark #dark-icon,
+      .dark #dark-icon-mobile {
+        display: block;
+      }
+
+      #dark-icon,
+      #dark-icon-mobile {
+        display: none;
+      }
+
+      .dark #dark-icon,
+      .dark #dark-icon-mobile {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <div id="profile-section" class="max-w-5xl mx-auto p-6 pb-24">
@@ -45,7 +604,12 @@
           </button>
 
           <a href="#contact-section">
-            <img src="./src/img/contact.svg" alt="Contact" loading="lazy" class="w-6 h-6" />
+            <img
+              src="./src/img/contact.svg"
+              alt="Contact"
+              loading="lazy"
+              class="w-6 h-6"
+            />
           </a>
         </div>
       </div>
@@ -58,7 +622,12 @@
           class="flex items-center justify-center gap-4 px-6 py-3 backdrop-blur-md bg-white/20 border border-white/30 rounded-full shadow-lg nav-button"
         >
           <a href="#profile-section">
-            <img src="./src/img/home.svg" alt="Home" loading="lazy" class="w-6 h-6" />
+            <img
+              src="./src/img/home.svg"
+              alt="Home"
+              loading="lazy"
+              class="w-6 h-6"
+            />
           </a>
           <button id="theme-toggle-mobile" class="w-6 h-6 focus:outline-none">
             <img
@@ -78,7 +647,12 @@
           </button>
 
           <a href="#contact-section">
-            <img src="./src/img/contact.svg" alt="Contact" loading="lazy" class="w-6 h-6" />
+            <img
+              src="./src/img/contact.svg"
+              alt="Contact"
+              loading="lazy"
+              class="w-6 h-6"
+            />
           </a>
         </div>
       </div>
@@ -105,7 +679,10 @@
               target="_blank"
               rel="noopener noreferrer"
               class="transition-transform transform hover:scale-125"
-              ><img src="./src/img/instagram.png" loading="lazy" alt="instagram"
+              ><img
+                src="./src/img/instagram.png"
+                loading="lazy"
+                alt="instagram"
             /></a>
             <a
               href="https://github.com/Archiemedezzz"
@@ -1001,8 +1578,8 @@
                 class="w-8 h-8"
                 loading="lazy"
                 href="https://instagram.com/rmaradtia"
-              target="_blank"
-              rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
               />
             </a>
             <a
@@ -1022,7 +1599,7 @@
               class="transition-transform transform hover:scale-125"
             >
               <img
-              loading="lazy"
+                loading="lazy"
                 src="./src/img/Linkedin.png"
                 alt="LinkedIn"
                 class="w-8 h-8"
@@ -1032,19 +1609,182 @@
         </div>
       </footer>
     </div>
-    <script src="./src/js/aos.js"></script>
-    <script src="./src/js/main.js"></script>
     <script>
       // Inisialisasi AOS
-      document.addEventListener('DOMContentLoaded', function() {
+      // Fungsi untuk toggle tab skills/tools
+      function toggleTab(tab) {
+        document
+          .getElementById("skills")
+          .classList.toggle("hidden", tab !== "skills");
+        document
+          .getElementById("tools")
+          .classList.toggle("hidden", tab !== "tools");
+        document
+          .getElementById("btn-skills")
+          .classList.toggle("active", tab === "skills");
+        document
+          .getElementById("btn-tools")
+          .classList.toggle("active", tab === "tools");
+      }
+
+      // Fungsi untuk toggle portfolio webdev/graphic
+      function togglePortfolio(type) {
+        document
+          .getElementById("webdev-portfolio")
+          .classList.toggle("hidden", type !== "webdev");
+        document
+          .getElementById("graphic-portfolio")
+          .classList.toggle("hidden", type !== "graphic");
+        document
+          .getElementById("btn-webdev")
+          .classList.toggle("active", type === "webdev");
+        document
+          .getElementById("btn-graphic")
+          .classList.toggle("active", type === "graphic");
+      }
+
+      // Fungsi untuk setup modal gambar
+      function setupImageModal() {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImage");
+        const closeBtn = document.querySelector(".close-modal");
+
+        document.querySelectorAll(".experience-image").forEach((img) => {
+          img.addEventListener("click", function () {
+            modal.classList.add("active");
+            modalImg.src = this.src;
+            document.body.style.overflow = "hidden";
+          });
+        });
+
+        closeBtn.addEventListener("click", function () {
+          modal.classList.remove("active");
+          document.body.style.overflow = "auto";
+        });
+
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.classList.remove("active");
+            document.body.style.overflow = "auto";
+          }
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("active")) {
+            modal.classList.remove("active");
+            document.body.style.overflow = "auto";
+          }
+        });
+      }
+
+      // Fungsi untuk setup progress bars
+      function setupProgressBars() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const bar = entry.target;
+                const width = bar.getAttribute("data-width");
+                bar.style.width = width;
+                observer.unobserve(bar);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".fill-bar").forEach((bar) => {
+          bar.style.width = "0%";
+          observer.observe(bar);
+        });
+      }
+
+      // Fungsi untuk toggle tema
+      function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.classList.toggle("dark");
+        localStorage.setItem("darkMode", isDark);
+        updateThemeIcons(isDark);
+      }
+
+      function updateThemeIcons(isDark) {
+        // Desktop
+        document
+          .getElementById("light-icon")
+          ?.classList.toggle("hidden", isDark);
+        document
+          .getElementById("dark-icon")
+          ?.classList.toggle("hidden", !isDark);
+
+        // Mobile
+        document
+          .getElementById("light-icon-mobile")
+          ?.classList.toggle("hidden", isDark);
+        document
+          .getElementById("dark-icon-mobile")
+          ?.classList.toggle("hidden", !isDark);
+      }
+
+      function checkInitialTheme() {
+        const savedTheme = localStorage.getItem("darkMode");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const isDark = savedTheme ? savedTheme === "true" : prefersDark;
+
+        if (isDark) {
+          document.documentElement.classList.add("dark");
+        }
+
+        updateThemeIcons(isDark);
+      }
+
+      // Inisialisasi semua fungsi saat DOM siap
+      document.addEventListener("DOMContentLoaded", function () {
+        // Setup komponen
+        setupImageModal();
+        setupProgressBars();
+
+        // Event listener untuk tab
+        document
+          .getElementById("btn-skills")
+          ?.addEventListener("click", () => toggleTab("skills"));
+        document
+          .getElementById("btn-tools")
+          ?.addEventListener("click", () => toggleTab("tools"));
+
+        // Event listener untuk portfolio
+        document
+          .getElementById("btn-webdev")
+          ?.addEventListener("click", () => togglePortfolio("webdev"));
+        document
+          .getElementById("btn-graphic")
+          ?.addEventListener("click", () => togglePortfolio("graphic"));
+
+        // Dark mode
+        document
+          .getElementById("theme-toggle")
+          ?.addEventListener("click", toggleTheme);
+        document
+          .getElementById("theme-toggle-mobile")
+          ?.addEventListener("click", toggleTheme);
+
+        // Cek tema awal
+        checkInitialTheme();
+
+        // Refresh AOS setelah semua konten dimuat
+        window.addEventListener("load", function () {
+          AOS.refresh();
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
         AOS.init({
           duration: 800,
-          easing: 'ease-in-out-quad',
+          easing: "ease-in-out-quad",
           once: false,
-          mirror: true
+          mirror: true,
         });
       });
     </script>
   </body>
 </html>
-
