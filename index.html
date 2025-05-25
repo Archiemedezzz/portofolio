@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Portfolio Rama Raditia - Web Developer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portorama</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    
+    <!-- CSS -->
+    <link href="./src/css/aos.css" rel="stylesheet" />
+    <link href="./src/css/tailwind.css" rel="stylesheet" />
+    <link href="./src/css/style.css" rel="stylesheet" />
+    <title>Portorama</title>
+  </head>
+  <body>
+    <div id="profile-section" class="max-w-5xl mx-auto p-6 pb-24">
+      <!-- Navbar -->
+      <div
+        class="fixed top-6 left-1/2 transform -translate-x-1/2 hidden md:flex justify-center z-50"
+      >
+        <div
+          class="flex items-center justify-center gap-4 px-6 py-3 backdrop-blur-md bg-white/20 border border-white/30 rounded-full shadow-lg nav-button"
+        >
+          <a href="#profile-section">
+            <img src="./src/img/home.svg" alt="Home" class="w-6 h-6" />
+          </a>
+          <button id="theme-toggle" class="w-6 h-6 focus:outline-none">
+            <img
+              src="./src/img/light.svg"
+              alt="Toggle Dark Mode"
+              class="w-6 h-6"
+              loading="lazy"
+              id="light-icon"
+            />
+            <img
+              src="./src/img/dark.svg"
+              alt="Toggle Light Mode"
+              loading="lazy"
+              class="w-6 h-6 hidden dark:block"
+              id="dark-icon"
+            />
+          </button>
+
+          <a href="#contact-section">
+            <img src="./src/img/contact.svg" alt="Contact" loading="lazy" class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Navbar Mobile -->
+      <div
+        class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 md:hidden"
+      >
+        <div
+          class="flex items-center justify-center gap-4 px-6 py-3 backdrop-blur-md bg-white/20 border border-white/30 rounded-full shadow-lg nav-button"
+        >
+          <a href="#profile-section">
+            <img src="./src/img/home.svg" alt="Home" loading="lazy" class="w-6 h-6" />
+          </a>
+          <button id="theme-toggle-mobile" class="w-6 h-6 focus:outline-none">
+            <img
+              src="./src/img/light.svg"
+              alt="Toggle Dark Mode"
+              loading="lazy"
+              class="w-6 h-6"
+              id="light-icon-mobile"
+            />
+            <img
+              src="./src/img/dark.svg"
+              loading="lazy"
+              alt="Toggle Light Mode"
+              class="w-6 h-6 hidden dark:block"
+              id="dark-icon-mobile"
+            />
+          </button>
+
+          <a href="#contact-section">
+            <img src="./src/img/contact.svg" alt="Contact" loading="lazy" class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Profile Section -->
+      <div
+        class="flex flex-col md:flex-row mb-10 mt-30 gap-6 items-center md:items-start text-center md:text-left"
+      >
+        <div
+          class="flex-1 order-2 md:order-1"
+          data-aos="fade-right"
+          data-aos-duration="800"
+        >
+          <div class="text-center md:text-left">
+            <h1 class="text-6xl text-[#1D1D1D]">Rama Raditia</h1>
+            <p class="text-xl font-medium text-[#6C6B6B]">Web developer</p>
+          </div>
+
+          <div
+            class="social-icon flex justify-center md:justify-start gap-4 mt-5 text-xl"
+          >
+            <a
+              href="https://instagram.com/rmaradtia"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-transform transform hover:scale-125"
+              ><img src="./src/img/instagram.png" loading="lazy" alt="instagram"
+            /></a>
+            <a
+              href="https://github.com/Archiemedezzz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-transform transform hover:scale-125"
+              ><img src="./src/img/github.png" loading="lazy" alt="github"
+            /></a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-transform transform hover:scale-125"
+              ><img src="./src/img/Linkedin.png" loading="lazy" alt="Linkedin"
+            /></a>
+          </div>
+        </div>
+
+        <div
+          class="w-38 h-38 rounded-full overflow-hidden border-2 border-black mx-auto md:mx-0 order-1 md:order-2"
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
+          <img
+            src="./src/img/rama.png"
+            alt="Profile"
+            class="object-cover w-full h-full"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div
+        class="mb-10"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="400"
+      >
+        <h2 class="text-3xl">About me</h2>
+        <p class="text-md text-[#6C6B6B] mt-1 max-w-5xl">
+          Seorang Product Designer dan Front-end Developer yang antusias
+          mengubah ide menjadi website dan aplikasi yang indah serta fungsional.
+          Saya merancang antarmuka yang bersih dan menerjemahkannya menjadi
+          produk nyata yang dapat digunakan from wireframe to code.
+        </p>
+
+        <div class="flex gap-4 mt-4 text-[#6C6B6B]">
+          <button class="px-4 py-2 border rounded-full btn-animated text-xl">
+            <a href="#contact-section"><span>Contact me</span></a>
+          </button>
+          <a
+            href="./src/assets/cv.pdf"
+            download
+            class="px-4 py-2 border rounded-full btn-animated text-xl inline-block text-center"
+          >
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Skills and Tools -->
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+        <h2 class="text-3xl mb-2 text-[#1D1D1D]">Skills and Tools</h2>
+        <div class="flex flex-wrap gap-4 mt-4 mb-15 text-[#6C6B6B]">
+          <button
+            id="btn-skills"
+            onclick="toggleTab('skills')"
+            class="px-4 py-1 border tab-button active text-xl"
+          >
+            <span>Skills</span>
+          </button>
+          <button
+            id="btn-tools"
+            onclick="toggleTab('tools')"
+            class="px-4 py-1 border tab-button text-xl"
+          >
+            <span>Tools</span>
+          </button>
+        </div>
+
+        <div id="skills">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="text-2xl font-medium text-[#6C6B6B]">
+              <h3>HTML</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="85%"
+                ></div>
+              </div>
+              <h3>CSS</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="80%"
+                ></div>
+              </div>
+              <h3>JavaScript</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="60%"
+                ></div>
+              </div>
+              <h3>Tailwind</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="75%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="text-2xl font-medium text-[#6C6B6B]">
+              <h3>Bootstrap</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="80%"
+                ></div>
+              </div>
+              <h3>Laravel</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="65%"
+                ></div>
+              </div>
+              <h3>PHP</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="60%"
+                ></div>
+              </div>
+              <h3>MySQL</h3>
+              <div
+                class="w-full bg-[#D9D9D9] rounded-full h-[15px] mb-5 overflow-hidden"
+              >
+                <div
+                  class="bg-black h-full rounded-full fill-bar transition-all duration-1000"
+                  data-width="70%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tools" class="hidden mt-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pb-29">
+            <!-- Web Dev Tools -->
+            <div class="tool-card">
+              <h3 class="text-xl font-semibold mb-4 text-center text-[#6C6B6B]">
+                Web development tools
+              </h3>
+              <div class="flex justify-center gap-8 flex-wrap">
+                <img
+                  src="./src/img/vscode.png"
+                  alt="VS Code"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+                <img
+                  src="./src/img/laragon.png"
+                  alt="Laragon"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+                <img
+                  src="./src/img/npm.png"
+                  alt="NPM"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+                <img
+                  src="./src/img/vite.png"
+                  alt="Vite"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <!-- Design Tools -->
+            <div class="tool-card">
+              <h3 class="text-xl font-semibold mb-4 text-center text-[#6C6B6B]">
+                Design tools
+              </h3>
+              <div class="flex justify-center gap-8 flex-wrap">
+                <img
+                  src="./src/img/figma.png"
+                  alt="Figma"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+                <img
+                  src="./src/img/corel.png"
+                  alt="CorelDraw"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+                <img
+                  src="./src/img/pixellab.png"
+                  alt="PixelLab"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+                <img
+                  src="./src/img/canva.png"
+                  alt="Canva"
+                  class="w-12 h-12 tool-icon"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portofolio Section -->
+      <div class="mt-25">
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="text-3xl mb-4 text-start text-[#1D1D1D]"
+        >
+          Portofolio
+        </h2>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="flex flex-wrap gap-4 mb-10 text-[#6C6B6B] justify-start"
+        >
+          <button
+            id="btn-webdev"
+            onclick="togglePortfolio('webdev')"
+            class="px-4 py-1 border rounded-full tab-button active text-xl"
+          >
+            <span>Web Development</span>
+          </button>
+          <button
+            id="btn-graphic"
+            onclick="togglePortfolio('graphic')"
+            class="px-4 py-1 border rounded-full tab-button text-xl"
+          >
+            <span>Graphic Design</span>
+          </button>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          id="webdev-portfolio"
+          class="portfolio-section"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
+          >
+            <!-- Item 1 -->
+            <a
+              href="https://github.com/AltieAr/Schoolledger.git"
+              class="portfolio-card w-full max-w-xs"
+            >
+              <div
+                class="border-2 border-[#989898] rounded-lg overflow-hidden transition-all duration-400 hover:shadow-xl h-full flex flex-col"
+              >
+                <div
+                  class="h-40 bg-white overflow-hidden flex items-center justify-center"
+                >
+                  <img
+                    src="./src/img/schooledgerlogo.png"
+                    alt="Schooledger"
+                    class="w-3/4 h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4 ps-10 pb-10 flex-grow">
+                  <h3 class="text-xl font-bold text-[#464646] text-start">
+                    Tobungan Online
+                  </h3>
+                  <p class="text-md text-[#757575] mt-1 text-start">
+                    Team project
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Item 2 -->
+            <a
+              href="https://github.com/satriajaa/TodoEz.git"
+              class="portfolio-card w-full max-w-xs"
+            >
+              <div
+                class="border-2 border-[#989898] rounded-lg overflow-hidden transition-all duration-400 hover:shadow-xl h-full flex flex-col"
+              >
+                <div
+                  class="h-40 bg-white overflow-hidden flex items-center justify-center"
+                >
+                  <img
+                    src="./src/img/todoezlogo.png"
+                    alt="Todoez"
+                    class="w-3/5 h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4 ps-10 pb-10 flex-grow">
+                  <h3 class="text-xl font-bold text-[#464646] text-start">
+                    To-do list Online
+                  </h3>
+                  <p class="text-md text-[#757575] mt-1 text-start">
+                    Team project
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Item 3 -->
+            <a
+              href="https://github.com/Archiemedezzz/Portorama.git"
+              class="portfolio-card w-full max-w-xs"
+            >
+              <div
+                class="border-2 border-[#989898] rounded-lg overflow-hidden transition-all duration-400 hover:shadow-xl h-full flex flex-col"
+              >
+                <div
+                  class="h-40 bg-white overflow-hidden flex items-center justify-center"
+                >
+                  <img
+                    src="./src/img/R.png"
+                    alt="Portofolio"
+                    class="w-2/9 h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4 ps-10 pb-10 flex-grow">
+                  <h3 class="text-xl font-bold text-[#464646] text-start">
+                    Portofolio
+                  </h3>
+                  <p class="text-md text-[#757575] text-start">
+                    Retired project
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div id="graphic-portfolio" class="portfolio-section hidden mt-6">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
+          >
+            <!-- item 1 -->
+            <a
+              href="https://www.figma.com/design/OtkfUKdcbPUbtb1dLSkD49/Untitled?node-id=0-1&t=QgI5IEzeGqIvm5mo-1"
+              class="portfolio-card w-full max-w-xs"
+            >
+              <div
+                class="border-2 border-[#989898] rounded-lg overflow-hidden transition-all duration-400 hover:shadow-xl h-full flex flex-col"
+              >
+                <div
+                  class="h-40 bg-white overflow-hidden flex items-center justify-center"
+                >
+                  <img
+                    src="./src/img/logodesign.png"
+                    alt="logodesign"
+                    class="w-3/4 h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4 ps-10 pb-10 flex-grow">
+                  <h3 class="text-xl font-bold text-[#464646] text-start">
+                    Logo Design
+                  </h3>
+                  <p class="text-md text-[#757575] mt-1 text-start">Branding</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- item 2 -->
+            <a
+              href="https://www.figma.com/design/hP5h1px5IGSwc2RpAZojIn/XI-RPL-1-Kelompok-1?node-id=0-1&t=Ed8e5aod3CNoFp1G-1"
+              class="portfolio-card w-full max-w-xs"
+            >
+              <div
+                class="border-2 border-[#989898] rounded-lg overflow-hidden transition-all duration-400 hover:shadow-xl h-full flex flex-col"
+              >
+                <div
+                  class="h-40 bg-white overflow-hidden flex items-center justify-center"
+                >
+                  <img
+                    src="./src/img/burgerking.png"
+                    alt="Burger King"
+                    class="w-3/4 h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4 ps-10 pb-10 flex-grow">
+                  <h3 class="text-xl font-bold text-[#464646] text-start">
+                    Burger King
+                  </h3>
+                  <p class="text-md text-[#757575] mt-1 text-start">Redesign</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- item 3 -->
+            <a
+              href="https://www.figma.com/design/UbdY9l8Z2jwiviiwnhnyLv/XI-RPL-1---Kelompok-1?node-id=364-5&t=b1lwRJONXPUdoD5v-1"
+              class="portfolio-card w-full max-w-xs"
+            >
+              <div
+                class="border-2 border-[#989898] rounded-lg overflow-hidden transition-all duration-400 hover:shadow-xl h-full flex flex-col"
+              >
+                <div
+                  class="h-40 bg-white overflow-hidden flex items-center justify-center"
+                >
+                  <img
+                    src="./src/img/uiux.png"
+                    alt="UI/UX Design"
+                    class="w-3/4 h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4 ps-10 pb-10 flex-grow">
+                  <h3 class="text-xl font-bold text-[#464646] text-start">
+                    UI/UX Web Design
+                  </h3>
+                  <p class="text-md text-[#757575] mt-1 text-start">
+                    Design System
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="mt-40 mb-5">
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="text-3xl mb-8 text-[#1D1D1D]"
+        >
+          Experience
+        </h2>
+
+        <div class="relative">
+          <div
+            class="absolute left-4 md:left-1/2 h-full w-0.5 bg-[#1D1D1D] transform -translate-x-1/2"
+          ></div>
+
+          <!-- Experience Items -->
+          <div class="space-y-12">
+            <!-- Item 1 -->
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="relative flex flex-col md:flex-row items-end md:items-center gap-8"
+            >
+              <div class="hidden md:block md:w-1/2"></div>
+
+              <div
+                class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#1D1D1D] transform -translate-x-1/2 z-10"
+              ></div>
+
+              <div class="md:w-1/2 md:pl-12">
+                <div
+                  class="bg-white p-6 border-2 border-[#1D1D1D] rounded-lg shadow-[6px_6px_0_#1D1D1D]"
+                >
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-medium">
+                        Self-taught via Mimo.
+                      </h3>
+                    </div>
+                    <span
+                      class="bg-[#1D1D1D] text-white px-3 py-1 rounded-full text-sm"
+                      >2023</span
+                    >
+                  </div>
+                  <div class="description text-[#6C6B6B] mt-5">
+                    <p>
+                      Belajar mandiri dasar pemrograman dengan Mimo, fokus pada
+                      HTML, CSS, dan JavaScript untuk memperkuat logika dan
+                      pemahaman struktur web.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="relative flex flex-col md:flex-row items-end md:items-center gap-8"
+            >
+              <div class="md:w-1/2 pr-12 text-left hidden md:block">
+                <div
+                  class="bg-white p-6 border-2 border-[#1D1D1D] rounded-lg shadow-[-6px_6px_0_#1D1D1D]"
+                >
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-medium">
+                        Tech & Code at School
+                      </h3>
+                    </div>
+                    <span
+                      class="bg-[#1D1D1D] text-white px-3 py-1 rounded-full text-sm"
+                      >2023</span
+                    >
+                  </div>
+                  <div class="description text-[#6C6B6B] mt-5">
+                    <p>
+                      Mempelajari C#, HTML, CSS, JavaScript, Java, mobile
+                      development, dan MySQL sebagai bagian dari kurikulum
+                      sekolah.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#1D1D1D] transform -translate-x-1/2 z-10"
+              ></div>
+
+              <div class="md:hidden w-full self-end md:self-auto text-left">
+                <div
+                  class="bg-white p-6 border-2 border-[#1D1D1D] rounded-lg shadow-[6px_6px_0_#1D1D1D]"
+                >
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-medium">
+                        Tech & Code at School
+                      </h3>
+                    </div>
+                    <span
+                      class="bg-[#1D1D1D] text-white px-3 py-1 rounded-full text-sm"
+                      >2020 - 2022</span
+                    >
+                  </div>
+                  <div class="description text-[#6C6B6B] mt-5">
+                    <p>
+                      Mempelajari C#, HTML, CSS, JavaScript, Java, mobile
+                      development, dan MySQL sebagai bagian dari kurikulum
+                      sekolah.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="relative flex flex-col md:flex-row items-end md:items-center gap-8"
+            >
+              <div class="hidden md:block md:w-1/2"></div>
+
+              <div
+                class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#1D1D1D] transform -translate-x-1/2 z-10"
+              ></div>
+
+              <div class="md:w-1/2 md:pl-12">
+                <div
+                  class="bg-white p-6 border-2 border-[#1D1D1D] rounded-lg shadow-[6px_6px_0_#1D1D1D]"
+                >
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-medium">
+                        Joined Skilvul Bootcamp
+                      </h3>
+                    </div>
+                    <span
+                      class="bg-[#1D1D1D] text-white px-3 py-1 rounded-full text-sm"
+                      >2024</span
+                    >
+                  </div>
+                  <div class="description text-[#6C6B6B] mt-5">
+                    <p>
+                      Berpartisipasi dalam program Skilvul untuk mengembangkan
+                      keterampilan praktis di bidang web dan teknologi digital.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="relative flex flex-col md:flex-row items-end md:items-center gap-8"
+            >
+              <div class="md:w-1/2 pr-12 text-left hidden md:block">
+                <div
+                  class="bg-white p-6 border-2 border-[#1D1D1D] rounded-lg shadow-[-6px_6px_0_#1D1D1D]"
+                >
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-medium">AI Training</h3>
+                    </div>
+                    <span
+                      class="bg-[#1D1D1D] text-white px-3 py-1 rounded-full text-sm"
+                      >2024</span
+                    >
+                  </div>
+                  <div class="description text-[#6C6B6B] mt-5">
+                    <p>
+                      Menyelesaikan pelatihan bersertifikat di bidang AI,
+                      mencakup konsep dasar AI dan penerapannya dalam teknologi
+                      modern.
+                    </p>
+                    <img
+                      src="./src/img/certificate_ai.jpeg"
+                      alt="sertifikat"
+                      loading="lazy"
+                      class="experience-image border-4 border-[#1D1D1D] mt-4 rounded-sm shadow h-20 w-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#1D1D1D] transform -translate-x-1/2 z-10"
+              ></div>
+
+              <div class="md:hidden w-full self-end md:self-auto text-left">
+                <div
+                  class="bg-white p-6 border-2 border-[#1D1D1D] rounded-lg shadow-[6px_6px_0_#1D1D1D]"
+                >
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-medium">AI training</h3>
+                    </div>
+                    <span
+                      class="bg-[#1D1D1D] text-white px-3 py-1 rounded-full text-sm"
+                      >2024</span
+                    >
+                  </div>
+                  <div class="description text-[#6C6B6B] mt-5">
+                    <p>
+                      Menyelesaikan pelatihan bersertifikat di bidang AI,
+                      mencakup konsep dasar AI dan penerapannya dalam teknologi
+                      modern.
+                    </p>
+                    <img
+                      src="./src/img/certificate_ai.jpeg"
+                      alt="sertifikat"
+                      class="experience-image border-4 border-[#1D1D1D] mt-4 rounded-sm shadow h-20 w-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="relative flex flex-col md:flex-row items-end md:items-center gap-8"
+            >
+              <div class="hidden md:block md:w-1/2"></div>
+
+              <div
+                class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#1D1D1D] transform -translate-x-1/2 z-10"
+              ></div>
+
+              <div class="md:w-1/2 md:pl-12">
+                <div
+                  class="bg-white p-6 border-2 border-[#1D1D1D] rounded-lg shadow-[6px_6px_0_#1D1D1D]"
+                >
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-2xl font-meedium">
+                        Team Leader and UI/UX Lead
+                      </h3>
+                    </div>
+                    <span
+                      class="bg-[#1D1D1D] text-white px-3 py-1 rounded-full text-sm"
+                      >2025</span
+                    >
+                  </div>
+                  <div class="description text-[#6C6B6B] mt-5">
+                    <p>
+                      Memimpin tim beranggotakan 4 orang dalam proyek
+                      kolaboratif, bertanggung jawab atas desain UI/UX dan
+                      koordinasi untuk memastikan kelancaran kerja tim dan
+                      eksekusi proyek.
+                    </p>
+                    <img
+                      src="./src/img/i1.png"
+                      alt="gambar projek"
+                      class="experience-image border-4 border-[#1D1D1D] mt-4 rounded-sm shadow h-20 w-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="image-modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <div class="image-modal-content">
+          <img id="expandedImage" src="" loading="lazy" alt="Expanded Image" />
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact-section" class="pt-35">
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="w-full md:w-1/2">
+            <div class="contact-icon flex flex-col gap-6">
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                class="text-3xl mb-2 text-[#1D1D1D]"
+              >
+                Contact
+              </h2>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                class="flex items-start gap-4"
+              >
+                <img
+                  src="./src/img/email.png"
+                  alt="Email"
+                  class="w-6 h-6 mt-1"
+                  loading="lazy"
+                />
+                <div>
+                  <h3 class="text-xl font-medium text-[#1D1D1D]">Email</h3>
+                  <p class="text-lg text-[#6C6B6B]">hi.ramaraditia@gmail.com</p>
+                </div>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                class="flex items-start gap-4"
+              >
+                <img
+                  src="./src/img/phone.png"
+                  alt="Phone"
+                  class="w-6 h-6 mt-1"
+                  loading="lazy"
+                />
+                <div>
+                  <h3 class="text-xl font-medium text-[#1D1D1D]">Phone</h3>
+                  <p class="text-lg text-[#6C6B6B]">+62-838-2902-2240</p>
+                </div>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                class="flex items-start gap-4"
+              >
+                <img
+                  src="./src/img/location.png"
+                  alt="Location"
+                  class="w-6 h-6 mt-1"
+                  loading="lazy"
+                />
+                <div>
+                  <h3 class="text-xl font-medium text-[#1D1D1D]">Location</h3>
+                  <p class="text-lg text-[#6C6B6B]">
+                    JI Nangka v. Pakulonan Kec. Serpong Utara<br />Kota
+                    Tangerang Selatan
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2">
+            <h3
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="text-4xl mb-6 text-[#1D1D1D]"
+            >
+              Got something cool in mind? <br />
+              Let me know here.
+            </h3>
+
+            <form
+              action="https://formsubmit.co/hi.ramaraditia@gmail.com"
+              method="POST"
+              class="flex flex-col gap-6"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+
+              <div data-aos="fade-up" data-aos-duration="1000">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 border-2 border-[#1D1D1D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D1D1D]"
+                  placeholder="What's your name?"
+                />
+              </div>
+
+              <div data-aos="fade-up" data-aos-duration="1000">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border-2 border-[#1D1D1D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D1D1D]"
+                  placeholder="Your fancy email"
+                />
+              </div>
+
+              <div data-aos="fade-up" data-aos-duration="1000">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-3 border-2 border-[#1D1D1D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D1D1D]"
+                  placeholder="Tell me what's on your mind"
+                ></textarea>
+              </div>
+
+              <button
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                type="submit"
+                class="group self-end rounded-lg text-4xl transition-all duration-300 flex items-center gap-2"
+              >
+                <span><h3>Send</h3></span>
+                <span
+                  class="inline-block group-hover:translate-x-2 transition-transform duration-300"
+                  ><h3>-></h3></span
+                >
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-40 py-10 text-center">
+        <div class="max-w-5xl mx-auto p-6">
+          <h3
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="text-5xl text-[#1d1d1d] mb-6"
+          >
+            Thanks a ton
+            <span
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="text-5xl text-[#6C6B6B]"
+              >for checking out my work!</span
+            >
+          </h3>
+          <div class="social-icon flex justify-center gap-6">
+            <a
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              loading="lazy"
+              href="https://instagram.com/rmaradtia"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-transform transform hover:scale-125"
+            >
+              <img
+                src="./src/img/instagram.png"
+                alt="Instagram"
+                class="w-8 h-8"
+                loading="lazy"
+                href="https://instagram.com/rmaradtia"
+              target="_blank"
+              rel="noopener noreferrer"
+              />
+            </a>
+            <a
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              href="https://github.com/Archiemedezzz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-transform transform hover:scale-125"
+            >
+              <img src="./src/img/github.png" alt="GitHub" class="w-8 h-8" />
+            </a>
+            <a
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              href="#"
+              class="transition-transform transform hover:scale-125"
+            >
+              <img
+              loading="lazy"
+                src="./src/img/Linkedin.png"
+                alt="LinkedIn"
+                class="w-8 h-8"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./src/js/aos.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script>
+      // Inisialisasi AOS
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out-quad',
+          once: false,
+          mirror: true
+        });
+      });
+    </script>
+  </body>
+</html>
+
